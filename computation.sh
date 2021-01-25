@@ -22,4 +22,10 @@ results[x]="$x"
 results[y]="$y"
 results[z]="$z"
 
-echo "Results=" ${results[@]}
+echo "Results from dtctionary:" ${results[@]}
+
+results_arr[0]=${results[w]}
+results_arr[1]=${results[x]}
+results_arr[2]=${results[y]}
+results_arr[3]=${results[z]}
+echo "Results from array:" ${results_arr[@]}
