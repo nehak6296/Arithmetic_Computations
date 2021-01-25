@@ -30,6 +30,8 @@ results_arr[2]=${results[y]}
 results_arr[3]=${results[z]}
 echo "Results from array:" ${results_arr[@]}
 
+#SORTING IN DESCENDING ORDER
+
 for (( i = 0; i < 4 ; i++ ))
 do
 for (( j = $i; j < 4 ; j++ ))
@@ -43,7 +45,29 @@ fi
 done
 done
 
-echo "sorted array:"
+echo "sorted array in descending order:"
+
+for (( i=0; i < 4; i++ ))
+do
+echo ${results_arr[$i]}
+done
+
+#SORTING IN ASCENDING ORDER
+
+for (( i = 0; i < 4 ; i++ ))
+do
+for (( j = $i; j < 4 ; j++ ))
+do
+if [ ${results_arr[$i]} -gt ${results_arr[$j]} ]
+then
+        t=${results_arr[$i]}
+        results_arr[$i]=${results_arr[$j]}
+        results_arr[$j]=$t
+fi
+done
+done
+
+echo "sorted array in ascending order:"
 
 for (( i=0; i < 4; i++ ))
 do
