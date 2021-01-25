@@ -15,3 +15,11 @@ echo "(c+a/b)="$y
 
 z=$(( $a % $b + $c))
 echo "(a%b+c)="$z
+
+declare -A results
+results[w]="$w"
+results[x]="$x"
+results[y]="$y"
+results[z]="$z"
+
+echo "Results=" ${results[@]}
