@@ -29,3 +29,23 @@ results_arr[1]=${results[x]}
 results_arr[2]=${results[y]}
 results_arr[3]=${results[z]}
 echo "Results from array:" ${results_arr[@]}
+
+for (( i = 0; i < 4 ; i++ ))
+do
+for (( j = $i; j < 4 ; j++ ))
+do
+if [ ${results_arr[$i]} -lt ${results_arr[$j]} ]
+then
+	t=${results_arr[$i]}
+	results_arr[$i]=${results_arr[$j]}
+	results_arr[$j]=$t
+fi
+done
+done
+
+echo "sorted array:"
+
+for (( i=0; i < 4; i++ ))
+do
+echo ${results_arr[$i]}
+done
